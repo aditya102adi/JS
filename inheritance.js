@@ -48,7 +48,7 @@ class Tester extends Employee {
 }
 
 // Creating Developer object
-const dev = new Developer("Alice", 101, 60000, "JavaScript, React, Node.js");
+const dev = new Developer("Aditya", 101, 60000, "JavaScript, React, Node.js");
 dev.displayDetails();
 dev.skillsInfo();
 dev.project("E-Commerce Website");
@@ -56,7 +56,7 @@ dev.project("E-Commerce Website");
 console.log("-------------------");
 
 // Creating Tester object
-const tester = new Tester("Bob", 102, 50000, "Selenium, Postman");
+const tester = new Tester("Ravi", 102, 50000, "Selenium, Postman");
 tester.displayDetails();
 tester.skillsInfo();
 tester.project("Banking Application");
