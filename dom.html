@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Hello</h1>
+    <h1>Welcome</h1>
+    <h1>JS</h1>
+
+    
+
+    <p id="para" class="p1">Hello I am Happy Happy Happyyyyy </p>
+    <p id="para" class="p1">Happy Birthday </p>
+    <p id="para" class="p1">Aditya Kumar Sharma </p>
+
+    <button onclick="change()">Click Me ❤️</button>
+
+    <script>
+
+        
+
+        function change() {
+            document.getElementsByTagName("h1")[0].innerText = "Namaskar";
+            const h = document.getElementsByTagName("h1");
+
+            for(let i =0; i<h.length; i++) {
+                h[i].style.backgroundColor = "Yellow";
+            }
+
+            h[1].textContent = "Swagat Hai";
+            h[1].style.fontSize = "60px";
+
+            document.getElementById("para").innerText = "This is a paragraph";
+
+
+        }
+    </script>
+
+</body>
+</html>
