@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Highlight Example</title>
+    <style>
+        .highlight {
+            background-color: yellow;
+            color: black;
+            font-weight: bold;
+            padding: 5px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="heading">Hello, World!</h1>
+
+    <button onclick="addhighlight()">Add Highlight</button>
+    <button onclick="removehighlight()">Remove Highlight</button>
+    <button onclick="togglehighlight()">Toggle Highlight</button>
+    <button onclick="checkhighlight()">Check Highlight</button>
+
+    <script>
+        let h = document.getElementById("heading");
+
+        function addhighlight() {
+            h.classList.add("highlight");
+        }
+
+        function removehighlight() {
+            h.classList.remove("highlight");
+        }
+
+        function togglehighlight() {
+            h.classList.toggle("highlight");
+        }
+
+        function checkhighlight() {
+            if (h.classList.contains("highlight")) {
+                alert("Highlight class is present");
+            } else {
+                alert("Highlight class is NOT present");
+            }
+        }
+    </script>
+</body>
+</html>

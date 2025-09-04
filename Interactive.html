@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive</title>
+
+    <style>
+        div {
+            height: 20px;
+            width: 20px;
+            border: 2px solid red;
+            padding: 20px;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to Our Website</h1>
+    <button onclick="addBox()">Add Box</button>
+    <button onclick="removeBox()">Remove</button>
+
+    <script>
+        function addBox() {
+            b = document.querySelector("body");
+            myDiv = document.createElement("div");
+            b.appendChild(myDiv);
+        }
+
+        function removeBox() {
+            b = document.querySelector("body");
+            removeDiv = document.querySelector("div");
+            b.removeChild(removeDiv);
+        }
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background: #000;
+            color: white;
+            transition: background 0.3s, color 0.3s; /* Smooth transition */
+        }
+        /* .light-mode {j. */
+            background: #fff;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    <h2>Light Mode</h2>
+    <button onclick="changeTheme()">Change Theme</button>
+
+    <script>
+        const body = document.querySelector("body");
+        const heading = document.querySelector("h2");
+
+        function changeTheme() {
+            body.classList.toggle("light-mode");
+
+            if (body.classList.contains("light-mode")) {
+                heading.textContent = "Dark Mode";
+            } else {
+                heading.textContent = "Light Mode";
+            }
+        }
+    </script>
+</body>
+</html>
+<!-- j. -->
