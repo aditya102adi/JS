@@ -1,11 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Events</title>
+    <style>
+        #myDiv {
+            height: 100px;
+            width: 100px;
+            border: 2px solid black;
+            padding: 20px;
+            margin: 20px;
+            background: #fff;
+            cursor: pointer;
+            transition: background-color 2s;
+        }
+    </style>
 </head>
+
 <body>
-    
+
+    <div id="myDiv"></div>
+
+    <form>
+        <input type="text" id="input" placeholder="Enter Name">
+        <button type="submit">Submit</button>
+    </form>
+
+
+    <script>
+
+        // Form Events
+        document.querySelector("form").addEventListener("submit", () => {
+            alert("Form Submitted");
+        });
+
+        const input = document.getElementById("input");
+        input.addEventListener("change", (event) => {
+            alert(`Input changed to: ${event.target.value}`);
+        });
+
+        input.addEventListener("focus", () => {
+            console.log("Input field focused");
+        });
+
+        input.addEventListener("blur", () => {
+            console.log("Input field Unfocused (blur)");
+        });
+
+        input.addEventListener("input", (event) => {
+            console.log(`The current input value is: ${event.target.value}`);
+        });
+
+
+        //Mouse Events 
+
+        //Single Click
+        const d = document.querySelector("div");
+        d.addEventListener('click', () => {
+            d.style.backgroundColor = "red";
+            //alert("Div Single Click");
+        });
+
+        //Double click 
+        const d2 = document.querySelector("#myDiv");
+        d2.addEventListener('dblclick', () => {
+            d2.style.backgroundColor = "yellow";
+        });
+
+        //Hover 
+        d2.addEventListener("mouseover", () => {
+            d2.style.background = "linear-gradient(135deg, #6a11cb, #ff6fd8)";
+        });
+
+
+        d2.addEventListener("mouseout", () => {
+            d2.style.background = "#fff";
+        });
+
+        d2.addEventListener("mousemove", (event) => {
+            //Client will include all the things
+            console.log(`The position is : ${event.clientX} and ${event.clientY}`);
+
+            d2.innerText = `X : ${event.offsetX} Y: ${event.offsetY}`;
+        });
+
+        //From tag 
+        /* const form = document.getElementById("input");
+        form.addEventListener("keydown", (event) => {
+            console.log(`Key Pressed: ${event.key}`);
+        });
+
+        form.addEventListener("keyup", (event) => {
+            console.log(`Key Realsed: ${event.key}`);
+        });
+
+        form.addEventListener("keypress", (event) => {
+            console.log(`Key: ${event.key}`);
+        });
+        */
+
+
+
+    </script>
+
 </body>
+
 </html>
