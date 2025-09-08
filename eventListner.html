@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events</title>
     <style>
+
+        body {
+            height: 8000px;
+        }
         #myDiv {
             height: 100px;
             width: 100px;
@@ -100,6 +104,24 @@
             console.log(`Key: ${event.key}`);
         });
         */
+
+        //Window events 
+
+        //DOMContentLoaded
+        document.addEventListener('DOMContentLoaded', ()=> {
+            alert('DOM fully loaded');
+        });
+
+        //2. resize
+        window.addEventListener('resize', () => {
+            console.log('window reszie');
+        });
+
+        //3. scroll
+        window.addEventListener('scroll', ()=> {
+            console.log('User is scrolling');
+        });
+
 
 
 
