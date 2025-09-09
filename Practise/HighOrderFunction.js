@@ -35,3 +35,4 @@ function processNumbers(numbers, callback) {
 
 const numbers_1 = [1,2,3,4,5,6,7,8];
 processNumbers(numbers_1, check);
+
