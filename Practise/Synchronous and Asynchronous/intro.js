@@ -1,5 +1,5 @@
 //Whenever we use setTimeOut function it becomes Synchronous function
-
+console.log('Starts')
 setTimeout(() => {
     console.log(`Open Book My Show`);
 }, 3000);
@@ -16,10 +16,10 @@ setTimeout(() => {
     console.log(`Ticket Booked`);
 }, 1000);
 
+console.log('Ends');
 
 
-
-
+//Makeing the Asyc to Sync
 setTimeout(() => {
     console.log('Step 1');
     setTimeout(() => {
