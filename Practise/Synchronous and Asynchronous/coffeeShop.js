@@ -1,18 +1,18 @@
 let stock = {
-     coffee : ['Cold Coffee', 'Latte', 'Espresso'],
-    sugar : ['Borwn', 'White'],
+    coffee: ['Cold Coffee', 'Latte', 'Espresso'],
+    sugar: ['Borwn', 'White'],
     size: ['L', 'M', 'S'],
 };
 
-let Order = (coffeeName, call_prepare) => {
+let Order = (coffeeName, call_prepare, size) => {
     setTimeout(() => {
         console.log(`${stock.coffee[coffeeName]} was selected`);
-        call_prepare();
+        call_prepare(size);
     }, 2000);
     console.log(`Order placed`);
 }
 
-let prepare = () => {
+let prepare = (size) => {
     setTimeout(() => {
         console.log("Preparation started");
 
@@ -26,7 +26,7 @@ let prepare = () => {
                     console.log("Then boil and filter");
 
                     setTimeout(() => {
-                        console.log(`${stock.size[1]} was selected, add it`);
+                        console.log(`${stock.size[size]} was selected, add it`);
 
                         setTimeout(() => {
                             console.log("☕ Coffee Served");
@@ -43,4 +43,4 @@ let prepare = () => {
     }, 0);
 };
 
-Order(1, prepare);
+Order(1, prepare,1);
