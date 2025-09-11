@@ -12,6 +12,9 @@ let Order = (coffeeName, call_prepare, size) => {
     console.log(`Order placed`);
 }
 
+
+//Events loops - 
+// Nested callback is also called as -> call back queue
 let prepare = (size) => {
     setTimeout(() => {
         console.log("Preparation started");
