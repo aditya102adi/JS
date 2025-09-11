@@ -7,6 +7,7 @@ try {
 }
 
 //Custom execption 
+//Throw will have catch
 function validate(age) {
     try {
         if (age < 18) {
@@ -15,7 +16,7 @@ function validate(age) {
             console.log('Age is valid');
         }
     } catch (ex) {
-        console.log(ex.messsage);
+        console.log(`Exception is : ${ex.message}`);
     }
 }
 
