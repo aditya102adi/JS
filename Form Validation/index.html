@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form validation</title>
+</head>
+
+<body>
+    <form>
+        <label for="usr">Username :</label>
+        <input type="text" id="usr" name="username">
+        <span id="error" style="color:red"></span>
+        <br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        let f = document.querySelector("form");
+
+        f.addEventListener("submit", (e) => {
+            e.preventDefault(); // prevent form submit
+
+            let username = document.querySelector("#usr").value.trim();
+            let errorMsg = document.querySelector("#error");
+
+            // Rule 1: Empty check
+            if (username === "") {
+                errorMsg.textContent = "Username cannot be empty!";
+                return;
+            }
+
+            // Rule 2: Length check (2 - 15)
+            if (username.length < 2) {
+                errorMsg.textContent = "Username must be at least 2 characters!";
+                return;
+            }
+            if (username.length > 15) {
+                errorMsg.textContent = "Username cannot be more than 15 characters!";
+                return;
+            }
+
+            // Rule 3: Only letters allowed
+            let letterPattern = /^[A-Za-z]+$/;
+            if (!letterPattern.test(username)) {
+                errorMsg.textContent = "Only letters allowed (no numbers or special characters)!";
+                return;
+            }
+
+            // If all good
+            errorMsg.textContent = "";
+            alert("Form submitted successfully!");
+        });
+    </script>
+</body>
+
+</html>
