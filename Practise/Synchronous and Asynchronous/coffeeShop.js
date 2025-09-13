@@ -47,3 +47,18 @@ let prepare = (size) => {
 };
 
 Order(1, prepare,1);
+
+/*🔥 Practice Callback Problems
+
+Ice Cream Shop Simulation
+
+Stock: flavors, cones, toppings, size.
+
+Steps: 
+choose flavor → 
+prepare cone → 
+add toppings → 
+freeze → 
+serve.
+
+Each step should be in setTimeout with different times.*/

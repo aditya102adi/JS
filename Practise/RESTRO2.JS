@@ -28,3 +28,4 @@ function orderCoffee() {
 
 // Place multiple orders
 waiter([orderPizza, orderPasta, orderCoffee]);
+   
