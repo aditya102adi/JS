@@ -52,4 +52,4 @@ function prepare_Order(productIndex, paymentIndex, deliveryIndex) {
 }
 
 // ✅ Place order
-order("Mobile", "UPI", "Myntra", prepare_Order);
+order("Mobile", "UPI", "Express", prepare_Order);
