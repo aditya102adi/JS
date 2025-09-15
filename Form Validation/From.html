@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form validation</title>
+</head>
+<body>
+  <form>
+    <!-- Username -->
+    <label for="usr">Username :</label>
+    <input type="text" id="usr" name="username">
+    <span id="userError" style="color:red"></span>
+    <br><br>
+
+    <!-- Password -->
+    <label for="pwd">Password :</label>
+    <input type="password" id="pwd" name="password">
+    <span id="passError" style="color:red"></span>
+    <br><br>
+
+    <!-- Email -->
+    <label for="email">Email :</label>
+    <input type="text" id="email" name="email">
+    <span id="emailError" style="color:red"></span>
+    <br><br>
+
+    <button type="submit">Submit</button>
+  </form>
+
+  <script>
+    let f = document.querySelector("form");
+
+    f.addEventListener("submit", (e) => {
+      e.preventDefault(); // prevent form submit
+
+      let username = document.querySelector("#usr").value.trim();
+      let password = document.querySelector("#pwd").value.trim();
+      let email = document.querySelector("#email").value.trim();
+
+      let userError = document.querySelector("#userError");
+      let passError = document.querySelector("#passError");
+      let emailError = document.querySelector("#emailError");
+
+      let isValid = true;
+
+      // Username validation
+      if (username === "") {
+        userError.textContent = "Username cannot be empty!";
+        isValid = false;
+      } else if (username.length < 2) {
+        userError.textContent = "Username must be at least 2 characters!";
+        isValid = false;
+      } else if (username.length > 15) {
+        userError.textContent = "Username cannot exceed 15 characters!";
+        isValid = false;
+      } else if (!/^[A-Za-z]+$/.test(username)) {
+        userError.textContent = "Username must contain only letters!";
+        isValid = false;
+      } else {
+        userError.textContent = "";
+      }
+
+      // Password validation
+      if (password === "") {
+        passError.textContent = "Password cannot be empty!";
+        isValid = false;
+      } else if (password.length < 6 || password.length > 12) {
+        passError.textContent = "Password must be 6–12 characters!";
+        isValid = false;
+      } else if (!/(?=.*[a-z])/.test(password)) {
+        passError.textContent = "Password must contain a lowercase letter!";
+        isValid = false;
+      } else if (!/(?=.*[A-Z])/.test(password)) {
+        passError.textContent = "Password must contain an uppercase letter!";
+        isValid = false;
+      } else if (!/(?=.*[0-9])/.test(password)) {
+        passError.textContent = "Password must contain a number!";
+        isValid = false;
+      } else if (!/(?=.[@$!%?&])/.test(password)) {
+        passError.textContent = "Password must contain a special character!";
+        isValid = false;
+      } else {
+        passError.textContent = "";
+      }
+
+      // Email validation
+      let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+      if (email === "") {
+        emailError.textContent = "Email cannot be empty!";
+        isValid = false;
+      } else if (!emailPattern.test(email)) {
+        emailError.textContent = "Enter a valid email address!";
+        isValid = false;
+      } else {
+        emailError.textContent = "";
+      }
+
+      // Final check
+      if (isValid) {
+        alert("Form submitted successfully!");
+        // f.submit();  // uncomment if you want actual submission
+      }
+    });
+  </script>
+</body>
+</html>
